@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simulador Excedente</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="file:///Users/aqfinanzas/Library/Application%20Support/Claude/local-agent-mode-sessions/14780b9b-3168-4500-84bb-fa4337af3575/297b3031-5925-4957-9b8c-313ce97505ef/local_7bf35eaf-9539-44a7-a1af-98580272cb71/outputs/Simulador%20Excedente_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
   :root{
     /* Paleta de marca AQ - Alejandro Quiñones */
@@ -35,10 +36,14 @@
     color:var(--ink);
     font-family:'Inter',sans-serif;
     min-height:100vh;
+    min-height:100dvh;
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     justify-content:center;
     padding:24px;
+  }
+  @media (min-width:561px){
+    body{align-items:center;}
   }
   h1,h2,h3,.display{font-family:'Sora',sans-serif;}
 
@@ -193,7 +198,9 @@
   footer.appfoot{text-align:center;margin-top:18px;font-size:11px;color:#A3AEC2;}
 
   @media (max-width:560px){
-    .card{padding:30px 24px;min-height:0;}
+    body{padding:16px 14px;}
+    .card{padding:28px 22px;min-height:0;}
+    .logo-badge img{height:40px;}
     .step h2{font-size:21px;}
     .result-hero .rv{font-size:42px;}
   }
