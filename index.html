@@ -335,11 +335,11 @@
         <div class="rs" id="resultSub">con un aporte inicial de $300 y aportes mensuales de $60</div>
       </div>
       <div class="result-msg" id="resultMotivation">Proteger lo que ya construiste es tan importante como hacerlo crecer. Este es tu punto de partida para lograrlo.</div>
-      <div class="result-invite" id="resultInvite" style="margin-top:16px;font-weight:600;color:#0f2a4a;line-height:1.55;"></div>
       <div class="spacer"></div>
-      <a class="btn whatsapp" id="btnWhatsapp" href="https://api.whatsapp.com/send?phone=573105104847" target="_blank" rel="noopener">
+      <div id="communityNote" style="font-size:14px;color:#5b6b8c;text-align:center;line-height:1.5;margin:2px 0 12px;">En nuestra comunidad recibirás <b style="color:var(--navy)">contenido de valor en finanzas e inversiones</b> todos los días 📈, además de los próximos lanzamientos.</div>
+      <a class="btn whatsapp" id="btnWhatsapp" href="https://go.wha.link/e1G3jb" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.51 2 12.04 2zm5.8 14.14c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.87-1.24-4.74-4.14-4.89-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35h.55c.18 0 .41-.07.64.49.24.57.81 1.98.88 2.12.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.93 1.94 1.22 2.22 1.36.28.14.44.12.6-.07.16-.19.69-.8.87-1.08.18-.28.36-.23.6-.14.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.12.07.68-.17 1.36z"></path></svg>
-        Escríbeme por WhatsApp →
+        Únete a la comunidad de WhatsApp →
       </a>
       <button class="btn ghost" onclick="restart()">Volver a empezar</button>
       <div class="disclaimer">Esta es una proyección educativa que asume un rendimiento anual promedio del 35%. No es garantía de resultados; los rendimientos reales varían y pueden ser mayores o menores.</div>
@@ -453,7 +453,6 @@
     btnStart.disabled = !(
       inpName.value.trim().length>1 &&
       isValidEmail(inpEmail.value.trim()) &&
-      state.countryCode &&
       inpPhone.value.trim().length>6
     );
   }
@@ -531,13 +530,8 @@
 
     document.getElementById('resultMotivation').textContent = motivationCopy[state.q4] || '';
 
-    // Invitación personalizada + WhatsApp directo a Alejandro
-    const plazoTxt = resultYearsEl.textContent;
-    const primerNombre = (state.name||'').split(' ')[0];
-    document.getElementById('resultInvite').textContent =
-      'Si quieres que te ayude a lograr un patrimonio mínimo de US$200,000 en '+plazoTxt+', escríbeme y te acompaño personalmente.';
-    const waMsg = 'Hola Alejandro'+(primerNombre?', soy '+primerNombre:'')+'. Hice el simulador y me salió '+plazoTxt+' para llegar a US$200,000. Quiero que me ayudes a lograrlo.';
-    const waLink = "https://api.whatsapp.com/send?phone=573105104847&text=" + encodeURIComponent(waMsg);
+    // WhatsApp link with prefilled context (replace group link below)
+    const waLink = "https://go.wha.link/e1G3jb";
     document.getElementById('btnWhatsapp').href = waLink;
 
     // Enviar lead a Google Sheets
